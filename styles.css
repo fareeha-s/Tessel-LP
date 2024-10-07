@@ -40,7 +40,7 @@ header {
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
+    font-size: 48px;
     font-weight: normal;
     margin: 0;
     letter-spacing: 0.2em;
@@ -70,7 +70,7 @@ main {
 h2 {
     margin: 0;
     font-family: 'Lora', serif;
-    font-size: 200px; /* Increased size */
+    font-size: 150px; /* Increased size */
     line-height: 1.2;
     font-weight: normal;
     letter-spacing: 0.05em;
