@@ -1,125 +1,83 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Lora', serif;
-    height: 100%;
-    color: white;
-    background-color: #000;
-}
+/* Existing styles */
+/* (Keep all your existing CSS here) */
 
-.header {
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    padding: 2vw;
-    box-sizing: border-box;
-}
-
-.header-inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-}
-
-.social-icons {
-    position: absolute;
-    right: 0;
-}
-
-.social-icons a {
-    color: white;
-    margin-left: 1rem;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 4vw;
-    box-sizing: border-box;
-    position: relative;
-    background: url('path-to-your-background-image.jpg') no-repeat center center;
-    background-size: cover;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
+/* Additional styles for Pockets page */
 .hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-h1, h2 {
-    font-family: 'Playfair Display', serif;
-    margin: 0;
-    line-height: 1;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 h1 {
-    font-size: 8vw;
-    color: #e0d0b0;
+    font-size: 3rem; /* Adjusted for Pockets page */
 }
 
 h2 {
-    font-size: 6vw;
-    color: #e0d0b0;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #E7AB99; /* Pockets page accent color */
+    margin-top: 0;
 }
 
-.cta-buttons {
-    display: flex;
-    gap: 1rem;
+.description {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.event-card {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.event-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.event-title {
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.event-description {
+    font-size: 0.9rem;
 }
 
 .cta-button {
+    display: inline-block;
     padding: 0.75rem 1.5rem;
-    border: 1px solid white;
-    border-radius: 50px;
+    background-color: #E7AB99;
+    color: black;
     text-decoration: none;
-    color: white;
-    font-size: 0.9rem;
-    text-transform: lowercase;
-    transition: background-color 0.3s, color 0.3s;
+    border-radius: 50px;
+    margin-top: 2rem;
+    border: none; /* Override existing styles */
+    font-size: 1rem;
+    text-transform: none; /* Override existing styles */
 }
 
 .cta-button:hover {
-    background-color: white;
-    color: black;
+    background-color: #d89b89;
+    color: black; /* Override existing styles */
 }
 
-.footer {
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.7);
-    z-index: 2;
-}
-
-.copyright {
-    position: absolute;
-    bottom: 2rem;
-    left: 2rem;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.7);
-    z-index: 2;
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
 }
