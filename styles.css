@@ -28,9 +28,9 @@ body, html {
 
 header {
     display: flex;
-    justify-content: center; /* Changed from space-between to center */
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 40px 40px; /* Increased top padding */
     position: absolute;
     top: 0;
     left: 0;
@@ -45,15 +45,26 @@ header {
     margin: 0;
     letter-spacing: 0.1em;
     color: #f1e4d8;
-    position: absolute; /* Added to center the logo independently */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for the logo's width */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .social-icons {
     display: flex;
-    position: absolute; /* Added to keep social icons on the right */
-    right: 40px; /* Align with the right padding of the header */
+    gap: 20px; /* Space between social icons */
+}
+
+.social-icons a {
+    color: #f1e4d8; /* Restore the color to match the rest of the text */
+    text-decoration: none;
+    font-size: 18px; /* Adjust as needed */
+}
+
+/* Add this to create a placeholder for the logo */
+.logo-placeholder {
+    width: 100px; /* Adjust based on your logo's width */
+    visibility: hidden;
 }
 
 main {
@@ -87,21 +98,24 @@ h3 {
 
 .cta-buttons {
     margin-top: 40px;
-    display: inline-flex; /* Changed from flex to inline-flex */
-    flex-direction: row; /* Changed from column to row */
-    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 400px; /* Adjust this value as needed */
 }
 
 .cta-button {
-    display: inline-block;
+    display: block;
     padding: 12px 24px;
-    margin-right: 10px; /* Added margin-right instead of margin-bottom */
+    margin-bottom: 10px; /* Space between buttons */
     background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid #f1e4d8;
     color: #f1e4d8;
     text-decoration: none;
     font-size: 16px;
     transition: background-color 0.3s;
+    text-align: center;
 }
 
 .cta-button:hover {
@@ -109,7 +123,7 @@ h3 {
 }
 
 .cta-button:last-child {
-    margin-right: 0; /* Remove margin from the last button */
+    margin-bottom: 0;
 }
 
 footer {
@@ -140,11 +154,12 @@ footer {
     
     .cta-buttons {
         flex-direction: column; /* Stack buttons vertically on small screens */
+        max-width: 100%;
     }
     
     .cta-button {
-        margin-right: 0;
-        margin-bottom: 15px;
+        font-size: 14px; /* Slightly smaller font on mobile */
+        padding: 10px 20px;
         width: 100%; /* Make buttons full width on small screens */
     }
 }
