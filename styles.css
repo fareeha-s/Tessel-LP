@@ -40,10 +40,10 @@ header {
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 32px;
+    font-size: 40px;
     font-weight: normal;
     margin: 0;
-    letter-spacing: 0.5em;
+    letter-spacing: 0.1em;
     color: #f1e4d8;
 }
 
@@ -152,6 +152,6 @@ footer {
     height: auto;
     transform: translateX(-50%) translateY(-50%);
     object-fit: cover;
-    filter: brightness(40%); /* Darkened the video more */
+    filter: brightness(70%); /* Increased brightness for better visibility */
     z-index: -1;
 }
