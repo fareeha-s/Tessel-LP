@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tessel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="background"></div>
+    <div class="background">
+        <video autoplay muted loop id="myVideo">
+            <source src="media/background-video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
     <div class="container">
         <header>
-            <div class="logo">Tessel</div>
+            <h1 class="logo">Tessel</h1>
             <div class="social-icons">
                 <a href="#" aria-label="Twitter">T</a>
                 <a href="#" aria-label="Instagram">I</a>
@@ -19,8 +24,8 @@
             </div>
         </header>
         <main>
-            <h1>Become a</h1>
-            <h2>Renaissance Human.</h2>
+            <h2>Become a</h2>
+            <h3>Renaissance Human.</h3>
             <div class="cta-buttons">
                 <a href="https://instantrun.club" class="cta-button">instant run club (2024)</a>
                 <a href="/waitlist" class="cta-button">noesis (2025)</a>
