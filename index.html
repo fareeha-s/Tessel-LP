@@ -6,10 +6,11 @@
     <title>Tessel</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <div class="background">
-        <video autoplay muted loop id="myVideo">
+        <video autoplay muted loop playsinline id="myVideo">
             <source src="media/background-video.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
@@ -18,9 +19,9 @@
         <header>
             <h1 class="logo">Tessel</h1>
             <div class="social-icons">
-                <a href="#" aria-label="Twitter">T</a>
-                <a href="#" aria-label="Instagram">I</a>
-                <a href="#" aria-label="LinkedIn">L</a>
+                <a href="https://twitter.com/tesselapp" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/tesselapp" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/company/tesselapp" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </header>
         <main>
@@ -36,5 +37,14 @@
             <div class="copyright">© 2024 Tessel</div>
         </footer>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById('myVideo');
+            video.play().catch(function(error) {
+                console.log("Autoplay was prevented:", error);
+                // You might want to show a play button here
+            });
+        });
+    </script>
 </body>
 </html>
