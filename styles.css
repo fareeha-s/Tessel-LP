@@ -77,7 +77,6 @@ h2 {
     color: white;
     text-decoration: underline;
 }
-
 /* Media query for responsiveness */
 @media (max-width: 768px) {
     .event-grid {
