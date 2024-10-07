@@ -64,25 +64,26 @@ main {
     flex-direction: column;
     justify-content: center;
     padding-bottom: 80px;
-    max-width: 50%; /* Limit width to match image */
+    max-width: 60%; /* Increased to accommodate longer single line */
 }
 
 h2 {
     margin: 0;
     font-family: 'Lora', serif;
-    font-size: 80px; /* Increased size */
+    font-size: 100px; /* Increased size */
     line-height: 1.2;
     font-weight: normal;
-    letter-spacing: 0.05em; /* Added letter spacing */
+    letter-spacing: 0.05em;
 }
 
 h3 {
     margin: 0;
     font-family: 'Lora', serif;
-    font-size: 72px; /* Slightly smaller than h2 */
+    font-size: 80px; /* Slightly smaller than h2 */
     line-height: 1.2;
     font-weight: normal;
-    letter-spacing: 0.05em; /* Added letter spacing */
+    letter-spacing: 0.05em;
+    white-space: nowrap; /* Ensure it stays on one line */
 }
 
 .cta-buttons {
