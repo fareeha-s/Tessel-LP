@@ -8,13 +8,18 @@
 }
 
 h1 {
-    font-size: 3rem; /* Adjusted for Pockets page */
+    font-size: 4rem; /* Adjusted for Pockets page */
+    font-family: 'Lora', serif; /* Added Lora font */
+    font-weight: normal; /* Remove bold styling */
+    margin-bottom: 0;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 4rem;
     color: #E7AB99; /* Pockets page accent color */
     margin-top: 0;
+    font-family: 'Lora', serif; /* Added Lora font */
+    font-weight: normal; /* Remove bold styling */
 }
 
 .description {
@@ -49,34 +54,27 @@ h2 {
     font-size: 0.9rem;
 }
 
+.cta-buttons {
+    margin-top: 2rem;
+}
+
 .cta-button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: #E7AB99;
-    color: black;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
     text-decoration: none;
-    border-radius: 50px;
-    margin-top: 2rem;
-    border: none; /* Override existing styles */
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-right: 1rem;
     font-size: 1rem;
-    text-transform: none; /* Override existing styles */
+    transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #d89b89;
-    color: black; /* Override existing styles */
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
-.footer-link {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-link:hover {
-    color: white;
-    text-decoration: underline;
-}
 /* Media query for responsiveness */
 @media (max-width: 768px) {
     .event-grid {
@@ -90,4 +88,111 @@ h2 {
     h2 {
         font-size: 1.5rem;
     }
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Lora', serif;
+}
+
+.hero {
+    height: 100vh;
+    background-image: url('path-to-your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 5%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: #f1e4d8;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 4rem;
+    color: #E7AB99;
+    margin-top: 0;
+    font-weight: normal;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-right: 1rem;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+.footer {
+    position: absolute;
+    bottom: 2rem;
+    left: 5%;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 1rem;
+    left: 5%;
+    color: #fff;
+    font-size: 0.8rem;
 }
