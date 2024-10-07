@@ -22,7 +22,7 @@ body, html {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 80px 40px 20px; /* Increased top padding to accommodate absolute header */
+    padding: 80px 40px 20px; /* Keep this padding */
     box-sizing: border-box;
 }
 
@@ -30,7 +30,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px 40px; /* Added left and right padding */
     position: absolute;
     top: 0;
     left: 0;
@@ -70,7 +70,7 @@ main {
 h2 {
     margin: 0;
     font-family: 'Lora', serif;
-    font-size: 100px; /* Increased size */
+    font-size: 200px; /* Increased size */
     line-height: 1.2;
     font-weight: normal;
     letter-spacing: 0.05em;
