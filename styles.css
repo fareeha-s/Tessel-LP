@@ -11,28 +11,18 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
-
-#myVideo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translateX(-50%) translateY(-50%);
-    object-fit: cover;
+    background-image: url('path-to-your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
     filter: brightness(60%);
+    z-index: -1;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 20px 40px;
+    padding: 80px 40px 20px; /* Increased top padding to accommodate absolute header */
     box-sizing: border-box;
 }
 
@@ -41,13 +31,20 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
 }
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: normal;
     margin: 0;
+    letter-spacing: 0.2em;
+    color: #f1e4d8;
 }
 
 .social-icons {
@@ -67,25 +64,39 @@ main {
     flex-direction: column;
     justify-content: center;
     padding-bottom: 80px;
+    max-width: 50%; /* Limit width to match image */
 }
 
-h2, h3 {
+h2 {
     margin: 0;
     font-family: 'Lora', serif;
-    font-size: 64px;
+    font-size: 80px; /* Increased size */
     line-height: 1.2;
     font-weight: normal;
+    letter-spacing: 0.05em; /* Added letter spacing */
+}
+
+h3 {
+    margin: 0;
+    font-family: 'Lora', serif;
+    font-size: 72px; /* Slightly smaller than h2 */
+    line-height: 1.2;
+    font-weight: normal;
+    letter-spacing: 0.05em; /* Added letter spacing */
 }
 
 .cta-buttons {
     margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align buttons to the left */
 }
 
 .cta-button {
     display: inline-block;
     padding: 12px 24px;
-    margin-right: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px; /* Space between buttons */
+    background-color: rgba(0, 0, 0, 0.5); /* Darker, more transparent background */
     border: 1px solid #f1e4d8;
     color: #f1e4d8;
     text-decoration: none;
@@ -128,4 +139,18 @@ footer {
         margin-right: 0;
         margin-bottom: 15px;
     }
+}
+
+#myVideo {
+    position: fixed; /* Changed to fixed */
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+    filter: brightness(40%); /* Darkened the video more */
+    z-index: -1;
 }
