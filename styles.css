@@ -77,6 +77,10 @@ main {
     width: 100%;
 }
 
+h2, h3 {
+    color: #C9B8A2;
+}
+
 h2 {
     margin: 0;
     font-family: 'Lora', serif;
