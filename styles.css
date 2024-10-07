@@ -67,6 +67,17 @@ h2 {
     color: black; /* Override existing styles */
 }
 
+.footer-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
 /* Media query for responsiveness */
 @media (max-width: 768px) {
     .event-grid {
