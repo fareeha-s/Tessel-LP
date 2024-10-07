@@ -94,45 +94,54 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: 'Lora', serif;
+    color: #f1e4d8;
 }
 
 .hero {
     height: 100vh;
-    background-image: url('path-to-your-background-image.jpg');
+    background-image: url('mountain-background.jpg');
     background-size: cover;
     background-position: center;
-    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 5%;
+    justify-content: space-between;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-    color: #f1e4d8;
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+nav a {
+    margin-left: 1rem;
+}
+
+nav img {
+    width: 24px;
+    height: 24px;
+}
+
+main {
+    text-align: left;
+    max-width: 800px;
 }
 
 h1 {
-    font-size: 4rem;
-    font-weight: normal;
+    font-size: 5rem;
     margin-bottom: 0;
+    font-weight: normal;
 }
 
 h2 {
-    font-size: 4rem;
-    color: #E7AB99;
+    font-size: 3.5rem;
     margin-top: 0;
     font-weight: normal;
 }
@@ -158,41 +167,35 @@ h2 {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-.header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem 5%;
+footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 2;
-}
-
-.logo {
-    color: #fff;
-    font-size: 1.5rem;
-}
-
-.social-icons a {
-    color: #fff;
-    margin-left: 1rem;
-    text-decoration: none;
-}
-
-.footer {
-    position: absolute;
-    bottom: 2rem;
-    left: 5%;
-    color: #fff;
     font-size: 0.9rem;
 }
 
+.footer-link {
+    color: #f1e4d8;
+    text-decoration: underline;
+}
+
 .copyright {
-    position: absolute;
-    bottom: 1rem;
-    left: 5%;
-    color: #fff;
-    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+    .cta-button {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
 }
