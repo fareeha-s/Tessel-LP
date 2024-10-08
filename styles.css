@@ -113,7 +113,9 @@ h3 {
 }
 
 .cta-button {
-    display: inline-block;
+    display: inline-flex; /* Changed from inline-block to inline-flex */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
     padding: 10px 20px;
     background-color: transparent;
     border: 1px solid #f1e4d8;
@@ -125,6 +127,8 @@ h3 {
     text-align: center;
     white-space: nowrap;
     flex-shrink: 0; /* Prevent buttons from shrinking */
+    height: 44px; /* Set a fixed height for both buttons */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .cta-button:first-child {
