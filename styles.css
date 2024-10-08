@@ -44,19 +44,20 @@ header {
     font-weight: normal;
     margin: 0;
     letter-spacing: 0.1em;
-    color: #f1e4d8;
+    color: #f1e4d8; /* Keep the header text white */
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .social-icons {
+    margin-left: auto; /* This will push the social icons to the right */
     display: flex;
     gap: 20px; /* Space between social icons */
 }
 
 .social-icons a {
-    color: #f1e4d8; /* Restore the color to match the rest of the text */
+    color: #f1e4d8; /* Keep social icons white */
     text-decoration: none;
     font-size: 18px; /* Adjust as needed */
 }
@@ -71,14 +72,14 @@ main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-bottom: 80px;
+    justify-content: flex-end; /* Changed from center to flex-end */
+    padding-bottom: 120px; /* Increased bottom padding */
     max-width: 100%; /* Changed from 60% to 100% */
     width: 100%;
 }
 
 h2, h3 {
-    color: #C9B8A2;
+    color: #C9B8A2; /* Set the color for 'Become a Renaissance Human' */
 }
 
 h2 {
