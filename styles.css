@@ -51,6 +51,20 @@ header {
     transition: all 0.3s ease; /* Smooth transition for repositioning */
 }
 
+.logo a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: #ffffff;
+}
+
+.pockets-page .logo a,
+.pockets-page .logo a:hover {
+    color: #ffffff;
+}
+
 .social-icons {
     margin-left: auto; /* This will push the social icons to the right */
     display: flex;
@@ -229,13 +243,14 @@ footer {
 }
 
 .pockets-page .background {
+    background-image: url('media/background-pockets.jpg');
+    background-size: cover;
+    background-position: center;
     opacity: 0.3;
 }
 
 .pockets-page #bgImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: none; /* Hide the img element if it exists */
 }
 
 .pockets-content {
