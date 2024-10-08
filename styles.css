@@ -148,6 +148,7 @@ h3 {
 
 .cta-button .unbold {
     font-weight: normal;
+    display: inline-block; /* This ensures the space is preserved */
 }
 
 .cta-button:hover {
