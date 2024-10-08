@@ -30,6 +30,112 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 40px; /* Reduce top padding if necessary */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: normal;
+    margin: 0;
+    letter-spacing: 0.05em;
+    color: #ffffff; /* Changed to pure white */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease; /* Smooth transition for repositioning */
+}
+
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    text-decoration: none;
+}
+
+.pockets-page .logo a,
+.pockets-page .logo a:hover {
+    color: #ffffff;
+}
+
+.social-icons {
+    margin-left: auto; /* This will push the social icons to the right */
+    display: flex;
+    gap: 40px; /* Increased from 20px to 40px for more spacing */
+}
+
+.social-icons a {
+    color: #ffffff; /* Changed to pure white */
+    text-decoration: none;
+    font-size: 18px; /* You might want to increase this if icons look too small */
+}
+
+/* Add this to create a placeholder for the logo */
+.logo-placeholder {
+    width: 100px; /* Adjust based on your logo's width */
+    visibility: hidden;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start; /* Align items to the start (left) of the container */
+    padding-bottom: 120px;
+    max-width: 100%;
+    width: 100%;
+}
+
+h2, h3 {
+    color: #C9B8A2;
+    margin: 0;
+    font-family: 'Lora', serif;
+    font-weight: normal;
+    letter-spacing: -0.02em;
+    align-self: flex-start;
+}
+
+h2 {
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Lora', serif;
+    color: #f1e4d8;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('path-to-your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(60%);
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 80px 40px 20px; /* Keep this padding */
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 40px 40px; /* Increased top padding */
     position: absolute;
     top: 0;
