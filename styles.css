@@ -30,7 +30,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px; /* Reduced padding */
+    padding: 40px 40px; /* Reduced padding */
     position: absolute;
     top: 0;
     left: 0;
