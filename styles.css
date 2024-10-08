@@ -130,7 +130,7 @@ h3 {
     display: inline-flex; /* Changed from inline-block to inline-flex */
     align-items: center; /* Center content vertically */
     justify-content: center; /* Center content horizontally */
-    padding: 10px 20px;
+    padding: 8px 16px; /* Reduce padding to make the button less tall */
     background-color: transparent;
     border: 1px solid #f1e4d8;
     border-radius: 20px 0 20px 0;
@@ -141,9 +141,9 @@ h3 {
     text-align: center;
     white-space: nowrap;
     flex-shrink: 0; /* Prevent buttons from shrinking */
-    height: 44px; /* Set a fixed height for both buttons */
+    height: auto; /* Remove fixed height if it was set */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .cta-button .unbold {
@@ -267,9 +267,9 @@ footer {
 
 .pockets-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 28px; /* Adjust this value to make it smaller or larger as needed */
+    font-size: 16px; /* Further reduced from 22px */
     color: #ffffff;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .pockets-content h1 .highlight {
@@ -285,9 +285,9 @@ footer {
 }
 
 .pockets-content .description {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 40px;
+    font-size: 12px; /* Further reduced from 14px */
+    line-height: 1.4;
+    margin-bottom: 30px;
 }
 
 .event-grid {
@@ -317,11 +317,11 @@ footer {
 .event-card h3 {
     text-align: right;
     margin-bottom: 10px;
-    font-size: 18px; /* Adjust as needed */
+    font-size: 18px;
 }
 
 .event-card-content {
-    padding: 0 20px; /* Add padding to the sides of the content */
+    padding: 0 20px;
 }
 
 .event-card p, .event-card ul {
@@ -343,4 +343,14 @@ footer {
     .event-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.matched-groups {
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.event-card h3 i {
+    font-style: italic;
 }
