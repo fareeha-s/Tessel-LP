@@ -102,29 +102,28 @@ h3 {
 }
 
 .cta-buttons {
-    margin-top: 40px;
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    max-width: 400px; /* Adjust this value as needed */
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 40px;
 }
 
 .cta-button {
-    display: block;
-    padding: 12px 24px;
-    margin-bottom: 10px; /* Space between buttons */
-    background-color: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* Transparent background */
     border: 1px solid #f1e4d8;
+    border-radius: 25px; /* Rounded corners */
     color: #f1e4d8;
     text-decoration: none;
     font-size: 16px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
     text-align: center;
 }
 
 .cta-button:hover {
     background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
 }
 
 .cta-button:last-child {
