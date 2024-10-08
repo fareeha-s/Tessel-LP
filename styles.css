@@ -187,6 +187,10 @@ h3 {
     font-style: italic;
 }
 
+.cta-button .unbold .community-partners {
+    font-style: italic;
+}
+
 footer {
     display: flex;
     justify-content: flex-end; /* This will push the content to the right */
