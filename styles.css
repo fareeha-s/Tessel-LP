@@ -327,7 +327,15 @@ footer {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     overflow: hidden;
-    position: relative;
+}
+
+.event-card h3 {
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-size: 16px;
+    text-align: right;
 }
 
 .event-image-container {
@@ -336,27 +344,14 @@ footer {
 
 .event-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto; /* Changed from fixed height */
+    max-height: 300px; /* Optional: set a max height if needed */
+    object-fit: contain; /* Changed from cover to contain */
     object-position: center;
-    margin-bottom: 0;
-}
-
-.event-card h3 {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    margin: 0;
-    padding: 5px 10px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #ffffff;
-    font-size: 16px;
-    border-radius: 3px;
-    z-index: 1;
 }
 
 .event-card-content {
-    padding: 15px 20px 20px;
+    padding: 15px;
 }
 
 /* Remove any styles that might be positioning the header outside the card */
