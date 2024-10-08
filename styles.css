@@ -494,3 +494,23 @@ footer {
     left: 0;
     z-index: 1;
 }
+
+.pockets-description {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+.pockets-description .gradient-text {
+    background: linear-gradient(45deg, #f1e4d8, #C9B8A2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+}
+
+.pockets-description .highlight {
+    background-color: rgba(241, 228, 216, 0.2);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
