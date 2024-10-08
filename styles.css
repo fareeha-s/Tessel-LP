@@ -87,9 +87,9 @@ main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start; /* Align items to the start (left) of the container */
-    padding-bottom: 120px;
+    justify-content: flex-end; /* This will push the content to the bottom */
+    align-items: flex-start;
+    padding-bottom: 60px; /* Adjust this value to control how far from the bottom the content appears */
     max-width: 100%;
     width: 100%;
 }
