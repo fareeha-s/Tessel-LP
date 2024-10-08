@@ -44,7 +44,7 @@ header {
     font-weight: normal;
     margin: 0;
     letter-spacing: 0.1em;
-    color: #f1e4d8; /* Keep the header text white */
+    color: #ffffff; /* Changed to pure white */
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -53,13 +53,13 @@ header {
 .social-icons {
     margin-left: auto; /* This will push the social icons to the right */
     display: flex;
-    gap: 20px; /* Space between social icons */
+    gap: 40px; /* Increased from 20px to 40px for more spacing */
 }
 
 .social-icons a {
-    color: #f1e4d8; /* Keep social icons white */
+    color: #ffffff; /* Changed to pure white */
     text-decoration: none;
-    font-size: 18px; /* Adjust as needed */
+    font-size: 18px; /* You might want to increase this if icons look too small */
 }
 
 /* Add this to create a placeholder for the logo */
@@ -79,25 +79,22 @@ main {
 }
 
 h2, h3 {
-    color: #C9B8A2; /* Set the color for 'Become a Renaissance Human' */
+    color: #C9B8A2;
+    margin: 0;
+    font-family: 'Lora', serif;
+    font-weight: normal;
+    letter-spacing: -0.02em; /* Tighten letter spacing */
 }
 
 h2 {
-    margin: 0;
-    font-family: 'Lora', serif;
-    font-size: 8vw; /* Responsive font size */
-    line-height: 1.2;
-    font-weight: normal;
-    letter-spacing: 0.05em;
+    font-size: 8vw; /* Keeping the existing responsive font size */
+    line-height: 0.9; /* Reduce line height to bring lines closer */
+    margin-bottom: -0.1em; /* Negative margin to bring h3 closer */
 }
 
 h3 {
-    margin: 0;
-    font-family: 'Lora', serif;
-    font-size: 5vw; /* Responsive font size, smaller than h2 */
-    line-height: 1.2;
-    font-weight: normal;
-    letter-spacing: 0.05em;
+    font-size: 5vw; /* Keeping the existing responsive font size */
+    line-height: 1;
     white-space: nowrap; /* Ensure it stays on one line */
 }
 
@@ -111,7 +108,7 @@ h3 {
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* Transparent background */
+    background-color: transparent; /* Changed to fully transparent */
     border: 1px solid #f1e4d8;
     border-radius: 25px; /* Rounded corners */
     color: #f1e4d8;
@@ -122,7 +119,7 @@ h3 {
 }
 
 .cta-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1); /* Slight white background on hover */
     color: #ffffff;
 }
 
@@ -149,7 +146,7 @@ footer {
     }
     
     h2 {
-        font-size: 12vw; /* Larger font size for smaller screens */
+        font-size: 14vw; /* Larger font size for smaller screens */
     }
     
     h3 {
