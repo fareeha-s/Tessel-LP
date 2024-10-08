@@ -172,6 +172,21 @@ h3 {
     color: #1c2c3c; /* Dark text on hover for contrast */
 }
 
+.cta-button.secondary-button {
+    background-color: transparent;
+    border: 1px solid rgba(241, 228, 216, 0.5);
+    color: rgba(241, 228, 216, 0.8);
+}
+
+.cta-button.secondary-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #f1e4d8;
+}
+
+.cta-button .unbold i {
+    font-style: italic;
+}
+
 footer {
     display: flex;
     justify-content: flex-end; /* This will push the content to the right */
@@ -326,10 +341,11 @@ footer {
 }
 
 .event-card h3 {
-    margin-top: 0; /* Remove top margin */
-    margin-bottom: 15px; /* Keep some space below the header */
+    margin-top: 0;
+    margin-bottom: 15px;
     font-size: 18px;
-    color: #ffffff; /* This makes all h3 elements in event cards pure white */
+    color: #ffffff;
+    text-align: right; /* Add this line */
 }
 
 .event-card h3 .tally-link {
@@ -439,5 +455,13 @@ footer {
 @keyframes slideUp {
     to {
         transform: translateY(0);
+    }
+}
+
+/* Add this media query */
+@media (min-width: 1024px) {
+    .pockets-content h1 {
+        font-size: 20px; /* Slightly smaller font size */
+        margin-bottom: 10px; /* Less bottom margin */
     }
 }
