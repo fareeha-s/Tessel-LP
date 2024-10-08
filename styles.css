@@ -295,7 +295,7 @@ footer {
     font-family: 'Playfair Display', serif;
     font-size: 24px; /* Increased from 18px */
     color: #ffffff;
-    margin-bottom: 20px; /* Increased from 15px for more spacing */
+    margin-bottom: 10px; /* Reduced from 20px to bring description closer */
 }
 
 .pockets-content h1 .highlight {
