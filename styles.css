@@ -331,21 +331,22 @@ footer {
 
 .event-card h3 {
     margin: 0;
-    padding: 10px 0; /* Removed left/right padding */
-    color: #ffffff; /* Keep the text white for contrast */
-    font-size: 20px; /* Increased font size */
+    padding: 10px 10px; /* Added left/right padding */
+    color: #ffffff;
+    font-size: 22px; /* Increased from 20px */
     text-align: right;
-    background-color: transparent; /* Removed background color */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Added text shadow for readability */
+    background-color: transparent;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .event-card h3 .tally-link {
-    font-weight: bold; /* Make the main text bold */
+    font-weight: bold;
+    padding-right: 5px; /* Added padding to the end of the sentence */
 }
 
 .event-card h3 span:not(.tally-link) {
-    font-size: 0.8em; /* Make the date slightly smaller */
-    opacity: 0.9; /* Slightly reduce opacity for visual hierarchy */
+    font-size: 0.85em; /* Slightly increased from 0.8em to maintain proportion */
+    opacity: 0.9;
 }
 
 .event-image-container {
