@@ -30,7 +30,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 40px; /* Increased top and bottom padding from 20px to 40px */
+    padding: 80px 40px 20px; /* Increased top padding to 80px */
     position: absolute;
     top: 0;
     left: 0;
@@ -133,7 +133,7 @@ h3 {
     padding: 8px 16px; /* Reduce padding to make the button less tall */
     background-color: transparent;
     border: 1px solid #f1e4d8;
-    border-radius: 20px 0 20px 0;
+    border-radius: 0 20px 0 20px; /* Changed to round top-right and bottom-left corners */
     color: #f1e4d8;
     text-decoration: none;
     font-size: 16px;
@@ -263,7 +263,7 @@ footer {
 }
 
 .pockets-content {
-    padding-top: 100px; /* Increased from 60px to account for the larger header */
+    padding-top: 160px; /* Increased to account for the larger header padding */
 }
 
 .pockets-content h1 {
