@@ -22,8 +22,11 @@ body, html {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 20px 40px 20px; /* Reduced top padding from 50px to 20px */
+    padding: 20px 20px 20px; /* Reduced side padding */
     box-sizing: border-box;
+    max-width: 1240px; /* Add a max-width to constrain the content */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 header {
@@ -318,9 +321,12 @@ footer {
 
 .event-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px; /* Reduced from 30px */
     margin-top: 20px;
+    max-width: 1200px; /* Add a max-width to constrain the grid */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .event-card {
