@@ -443,7 +443,7 @@ footer {
     right: 0;
     z-index: 2;
     background: transparent;
-    padding: 20px 40px;
+    padding: 40px 40px; /* Increased padding to match other pages */
 }
 
 .waitlist-page .logo,
@@ -492,4 +492,13 @@ footer {
         font-size: 20px; /* Slightly smaller font size */
         margin-bottom: 10px; /* Less bottom margin */
     }
+}
+
+.iframe-container {
+    position: fixed;
+    top: 120px; /* Increased to account for larger header padding */
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
 }
