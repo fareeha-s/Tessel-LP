@@ -386,3 +386,16 @@ footer {
         text-indent: -20px;
     }
 }
+
+.waitlist-page {
+    background-color: #1c2c3c; /* Match your site's background color */
+}
+
+.waitlist-page .container {
+    padding-top: 20px;
+}
+
+.waitlist-page header {
+    position: relative;
+    z-index: 10;
+}
