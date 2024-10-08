@@ -43,7 +43,7 @@ header {
     font-size: 40px;
     font-weight: normal;
     margin: 0;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     color: #ffffff; /* Changed to pure white */
     position: absolute;
     left: 50%;
