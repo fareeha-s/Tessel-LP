@@ -22,7 +22,7 @@ body, html {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 80px 40px 20px; /* Keep this padding */
+    padding: 50px 40px 20px; /* Keep this padding */
     box-sizing: border-box;
 }
 
