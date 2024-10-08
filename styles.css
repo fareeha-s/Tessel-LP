@@ -30,7 +30,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px; /* Reduce top padding if necessary */
+    padding: 40px 40px; /* Increased top and bottom padding from 20px to 40px */
     position: absolute;
     top: 0;
     left: 0;
@@ -162,7 +162,8 @@ h3 {
 }
 
 .cta-button:first-child {
-    opacity: 0.9; /* Make the first button (waitlist) less transparent */
+    opacity: 0.95; /* Increased opacity for the first button (waitlist) */
+    font-weight: bold; /* Make the text bold for the first button */
 }
 
 footer {
@@ -262,14 +263,14 @@ footer {
 }
 
 .pockets-content {
-    padding-top: 100px;
+    padding-top: 100px; /* Increased from 60px to account for the larger header */
 }
 
 .pockets-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 16px; /* Further reduced from 22px */
+    font-size: 24px; /* Increased from 18px */
     color: #ffffff;
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Increased from 15px for more spacing */
 }
 
 .pockets-content h1 .highlight {
@@ -285,15 +286,16 @@ footer {
 }
 
 .pockets-content .description {
-    font-size: 12px; /* Further reduced from 14px */
-    line-height: 1.4;
-    margin-bottom: 30px;
+    font-size: 18px; /* Increased from 16px */
+    line-height: 1.5; /* Slightly increased for better readability */
+    margin-bottom: 40px; /* Increased from 30px for more spacing before event grid */
 }
 
 .event-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    margin-top: 20px; /* Add this if you need to reduce space after the description */
 }
 
 .event-card {
@@ -353,4 +355,8 @@ footer {
 
 .event-card h3 i {
     font-style: italic;
+}
+
+.collaborate-button {
+    font-size: 20px; /* Adjust this value as needed */
 }
