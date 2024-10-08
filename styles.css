@@ -320,13 +320,14 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    margin-top: 20px; /* Add this if you need to reduce space after the description */
+    margin-top: 20px;
 }
 
 .event-card {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     overflow: hidden;
+    position: relative;
 }
 
 .event-image-container {
@@ -358,24 +359,11 @@ footer {
     padding: 15px 20px 20px;
 }
 
-.event-card .tally-link {
-    font-weight: bold;
-    color: #ffffff;
-}
-
-.event-card p, .event-card ul {
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-.event-card ul {
-    padding-left: 20px;
-    margin-top: 10px;
-}
-
-.event-card .cta-button {
-    margin-top: auto;
-    align-self: flex-start;
+/* Remove any styles that might be positioning the header outside the card */
+.pockets-content h3 {
+    position: static;
+    font-size: inherit;
+    white-space: normal;
 }
 
 @media (max-width: 768px) {
