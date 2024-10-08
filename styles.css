@@ -251,7 +251,7 @@ footer {
     width: 100%;
     height: 100%;
     background-image: url('media/background-pockets.jpg'); /* Update this path if necessary */
-    background-size: cover;
+    background-size: 150% auto; /* Increase this percentage to zoom in more */
     background-position: center center;
     background-repeat: no-repeat;
     opacity: 0.5; /* Increase this value to make the background more visible */
@@ -321,8 +321,14 @@ footer {
 
 .event-card h3 {
     text-align: right;
-    margin-bottom: 15px; /* Increase bottom margin */
+    margin-bottom: 15px;
     font-size: 18px;
+    color: #ffffff; /* This makes all h3 elements in event cards pure white */
+}
+
+.event-card h3 .tally-link {
+    font-weight: bold;
+    color: #ffffff; /* This ensures the tally-link text is also pure white */
 }
 
 .event-card p, .event-card ul {
@@ -350,6 +356,7 @@ footer {
     font-weight: bold;
     text-align: center;
     margin: 15px 0;
+    color: #F0E6D7; /* New color for the "Matched..." sentences */
 }
 
 .event-card h3 i {
@@ -359,4 +366,24 @@ footer {
 .collaborate-button {
     font-size: 16px; /* Reduced from 20px */
     padding: 8px 16px; /* Adjust padding as needed */
+}
+
+.pockets-content .description .right-aligned {
+    display: block;
+    text-align: right;
+    margin-top: 10px; /* Adjust this value to control the space between the two lines */
+}
+
+.pockets-content .description .indented-line {
+    display: inline-block;
+    padding-left: 40px; /* Adjust this value to control the indentation */
+    text-indent: -40px; /* This ensures the text wraps with the same indentation */
+    margin-top: 10px; /* Adds space between the two lines */
+}
+
+@media (max-width: 768px) {
+    .pockets-content .description .indented-line {
+        padding-left: 20px; /* Smaller indentation for mobile */
+        text-indent: -20px;
+    }
 }
