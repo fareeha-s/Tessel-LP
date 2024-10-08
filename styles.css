@@ -162,8 +162,14 @@ h3 {
 }
 
 .cta-button:first-child {
-    opacity: 0.95; /* Increased opacity for the first button (waitlist) */
-    font-weight: bold; /* Make the text bold for the first button */
+    background-color: rgba(255, 255, 255, 0.2); /* 20% opaque white background */
+    opacity: 1; /* Set to 1 to ensure full visibility of the button */
+    font-weight: bold; /* Keep the text bold */
+}
+
+.cta-button:first-child:hover {
+    background-color: rgba(255, 255, 255, 1); /* Fully opaque on hover */
+    color: #1c2c3c; /* Dark text on hover for contrast */
 }
 
 footer {
@@ -251,7 +257,7 @@ footer {
     width: 100%;
     height: 100%;
     background-image: url('media/background-pockets.jpg'); /* Update this path if necessary */
-    background-size: 150% auto; /* Increase this percentage to zoom in more */
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     opacity: 0.5; /* Increase this value to make the background more visible */
@@ -309,18 +315,19 @@ footer {
 
 .event-card img {
     width: 100%;
-    height: 200px; /* Adjust this value as needed */
+    height: 200px; /* Adjust this value if needed */
     object-fit: cover;
     object-position: center;
+    margin-bottom: 0; /* Ensure no margin at the bottom of the image */
 }
 
 .event-card-content {
-    padding: 0 20px 20px; /* Add padding to the bottom of the content */
+    padding: 15px 20px 20px; /* Add padding to the top */
 }
 
 .event-card h3 {
-    text-align: right;
-    margin-bottom: 15px;
+    margin-top: 0; /* Remove top margin */
+    margin-bottom: 15px; /* Keep some space below the header */
     font-size: 18px;
     color: #ffffff; /* This makes all h3 elements in event cards pure white */
 }
@@ -398,4 +405,39 @@ footer {
 .waitlist-page header {
     position: relative;
     z-index: 10;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.description {
+    overflow: hidden;
+}
+
+.description .text {
+    display: inline-block;
+    transform: translateY(100%);
+}
+
+.description.animate .text {
+    animation: slideUp 1s ease forwards;
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+    }
 }
