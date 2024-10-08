@@ -22,7 +22,7 @@ body, html {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 50px 40px 20px; /* Keep this padding */
+    padding: 20px 40px 20px; /* Reduced top padding from 50px to 20px */
     box-sizing: border-box;
 }
 
@@ -30,7 +30,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 40px 20px; /* Increased top padding to 40px */
+    padding: 20px 40px; /* Reduced padding */
     position: absolute;
     top: 0;
     left: 0;
@@ -263,7 +263,7 @@ footer {
 }
 
 .pockets-content {
-    padding-top: 160px; /* Increased to account for the larger header padding */
+    padding-top: 0; /* Remove top padding */
 }
 
 .pockets-content h1 {
