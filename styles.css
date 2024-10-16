@@ -331,7 +331,7 @@ footer {
     margin: 0;
     padding: 10px 10px; /* Added left/right padding */
     color: #ffffff;
-    font-size: 22px; /* Increased from 20px */
+    font-size: 20px; /* Increased from 20px */
     text-align: right;
     background-color: transparent;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
@@ -1162,7 +1162,7 @@ footer {
 .event-card .event-title.next-project .event-link {
     color: #ffffff;
     font-weight: bold;
-    font-size: 22px; /* Adjust this value as needed */
+    font-size: 20px; /* Adjust this value as needed */
 }
 
 body.modal-open {
