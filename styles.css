@@ -562,7 +562,7 @@ footer {
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     margin: 15vh auto;
-    padding: 40px 40px 20px; /* Top and sides 40px, bottom 20px */
+    padding: 40px 40px 40px; /* Top and sides 40px, bottom 20px */
     border: 1px solid rgba(255,255,255,0.2);
     width: 90%;
     max-width: 800px;
@@ -600,7 +600,6 @@ footer {
 }
 
 .modal-content .tessel-highlight {
-    color: #FFDAB9; /* Light peach color */
     font-weight: normal; /* Ensure it's not bold */
     font-style: normal; /* Ensure it's not italic */
 }
@@ -861,31 +860,16 @@ footer {
 }
 
 .b2b-link {
-    text-decoration: underline;
+    text-decoration: none; /* Remove underline */
     cursor: pointer;
     color: #ffffff;
     transition: all 0.3s ease;
     position: relative;
-    padding-right: 20px;
-}
-
-.b2b-link::after {
-    content: "→";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    padding-right: 1.5em; /* Make space for the arrow */
 }
 
 .b2b-link:hover {
     opacity: 0.8;
-}
-
-.b2b-link:hover::after {
-    opacity: 1;
-    transform: translateY(-50%) translateX(5px);
 }
 
 .next-project {
@@ -927,30 +911,283 @@ footer {
 
 .modal-content h2 .b2b-link {
     color: inherit;
-    text-decoration: none;
-    position: relative;
     transition: all 0.3s ease;
-}
-
-.modal-content h2 .b2b-link::after {
-    content: "→";
-    position: absolute;
-    right: -1.5em;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .modal-content h2 .b2b-link:hover {
     opacity: 0.8;
 }
 
-.modal-content h2 .b2b-link:hover::after {
-    opacity: 1;
-    transform: translateY(-50%) translateX(5px);
-}
-
 .no-backdrop-filter .modal {
     background-color: rgba(28, 44, 60, 0.95); /* More opaque fallback */
+}
+
+.b2b-link,
+.tally-link {
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    padding-left: 0;
+    position: relative;
+}
+
+.tally-link {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Add an underline */
+    padding-bottom: 2px; /* Space for the underline */
+}
+
+.b2b-link:hover,
+.tally-link:hover {
+    padding-left: 10px; /* Adjust this value for desired indent */
+    opacity: 0.8; /* Slightly reduced opacity on hover */
+}
+
+.tally-link:hover {
+    border-bottom-color: #ffffff; /* Make the underline more visible on hover */
+}
+
+.tally-link::after {
+    content: '→'; /* Add an arrow */
+    position: absolute;
+    right: -20px; /* Position the arrow outside the link text */
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tally-link:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(5px); /* Move the arrow slightly on hover */
+}
+
+.event-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 2px;
+    cursor: pointer; /* This ensures the cursor is always a pointer for these links */
+}
+
+.event-link:hover {
+    opacity: 0.6;
+    border-bottom-color: transparent;
+    cursor: pointer; /* This is redundant with the above, but included for clarity */
+}
+
+.close:hover,
+.close:focus {
+    color: #C9B8A2;
+    text-decoration: none;
+}
+
+.modal-content .white-semibold.italic {
+    font-style: italic;
+}
+
+.modal-content .indent-1 {
+    padding-left: 20px;
+    display: inline-block;
+}
+
+.modal-content .indent-2 {
+    padding-left: 40px;
+    display: inline-block;
+}
+
+.modal-content .indent-3 {
+    padding-left: 60px;
+    display: inline-block;
+}
+
+.modal-content .indent-4 {
+    padding-left: 80px;
+    display: inline-block;
+}
+
+.modal-content .indent-5 {
+    padding-left: 100px;
+    display: inline-block;
+}
+
+.modal-content p.no-margin {
+    margin-bottom: 15px; /* Adjust this value as needed for spacing between this block and the next paragraph */
+    line-height: 1.4; /* Controls spacing between the lines within this block */
+}
+
+#productModal .modal-content p .indent-1 {
+    padding-left: 20px;
+    display: inline-block;
+}
+
+#productModal .modal-content p .indent-2 {
+    padding-left: 40px;
+    display: inline-block;
+}
+
+#productModal .modal-content p .indent-3 {
+    padding-left: 60px;
+    display: inline-block;
+}
+
+.modal-content p:last-child {
+    margin-bottom: 0; /* Removes the bottom margin of the last paragraph */
+}
+
+/* Add a media query for smaller screens */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 10vh auto; /* Less top margin on small screens */
+        padding: 20px; /* Slightly less padding on small screens */
+    }
+    
+    .close {
+        top: 5px;
+        right: 10px;
+    }
+}
+
+.modal-content .tessel-highlight {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2em; /* Adjust this value to make it bigger as needed */
+    font-weight: normal; /* Remove bold */
+}
+
+/* Remove this if it exists */
+.modal-content .align-right {
+    text-align: left; /* or remove this rule entirely */
+}
+
+.modal-content .indent-1 { padding-left: 20px; }
+.modal-content .indent-2 { padding-left: 40px; }
+.modal-content .indent-3 { padding-left: 60px; }
+.modal-content .indent-4 { padding-left: 80px; }
+
+.modal-content .white-semibold {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.modal-content .white-semibold.italic {
+    font-style: italic;
+}
+
+.modal-content .tessel-highlight {
+    font-family: 'Playfair Display', serif;
+    font-size: inherit; /* This will make it the same size as the surrounding text */
+    font-weight: normal;
+}
+
+/* Remove this if it exists */
+.modal-content .align-right {
+    text-align: left; /* or remove this rule entirely */
+}
+
+.optic-white {
+    color: #FFFFFF;
+    font-weight: normal;
+}
+
+.modal-content p {
+    margin-bottom: 15px; /* Adjust this value as needed */
+}
+
+.modal-content p:last-child {
+    margin-bottom: 0; /* Removes margin from the last paragraph */
+}
+
+.modal-content .white-semibold {
+    font-weight: 600;
+    /* Remove any color property if it exists */
+}
+
+.semibold {
+    font-weight: 600;
+}
+
+.white {
+    color: #FFFFFF;
+}
+
+.events-page .logo a,
+.events-page .logo a:hover {
+    color: #ffffff;
+}
+
+.events-page {
+    background-color: #1c2c3c;
+}
+
+.events-page .background {
+    background-image: url('media/background-b2b.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.events-page #bgImage {
+    display: none;
+}
+
+.events-content {
+    padding-top: 120px;
+}
+
+.events-content h1 {
+    font-size: 24px;
+    color: #f1e4d8;
+    margin-bottom: 20px;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+}
+
+.events-content .description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #f1e4d8;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+.event-card .event-title.next-project,
+.event-card .event-title.next-project .event-link {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 22px; /* Adjust this value as needed */
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 40;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+body:not(.modal-open) .modal-backdrop {
+    opacity: 0;
+}
+
+/* Ensure your modal has a higher z-index */
+.modal {
+    z-index: 50;
+    /* ... other existing styles ... */
 }

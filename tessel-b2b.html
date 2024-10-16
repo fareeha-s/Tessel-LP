@@ -26,29 +26,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script async src="https://tally.so/widgets/embed.js"></script>
     <style>
-        .tally-link {
-            text-decoration: underline;
-            cursor: pointer;
-            color: #ffffff;
-            transition: all 0.3s ease;
-            position: relative;
-            padding-right: 20px;
-        }
-
-        .tally-link::after {
-            content: "→";
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .tally-link:hover::after {
-            opacity: 1;
-            transform: translateY(-50%) translateX(5px);
-        }
 
         .cta-button.collaborate-button {
             text-decoration: none;
@@ -138,7 +115,7 @@
             <div class="event-grid">
                 <!-- First card -->
                 <div class="event-card">
-                    <h3 class="event-title next-project"><span class="tally-link" data-tally-open="waGvGy" data-tally-layout="modal" data-tally-emoji-text="🌱" data-tally-emoji-animation="wave">yes fam toronto</span> / july</h3>
+                    <h3 class="event-title next-project"><span class="event-link" data-tally-open="waGvGy" data-tally-layout="modal" data-tally-emoji-text="🌱" data-tally-emoji-animation="wave">yes fam toronto</span> / july</h3>
                     <div class="event-image-container">
                         <img src="media/yesfamtoronto.jpg" alt="Yes Fam Toronto">
                     </div>
@@ -152,7 +129,7 @@
 
                 <!-- Second card -->
                 <div class="event-card">
-                    <h3 class="event-title next-project"><span class="tally-link" data-tally-open="mO0pPM" data-tally-layout="modal" data-tally-emoji-text="🌱" data-tally-emoji-animation="wave">buildspace</span> / august</h3>
+                    <h3 class="event-title next-project"><span class="event-link" data-tally-open="mO0pPM" data-tally-layout="modal" data-tally-emoji-text="🌱" data-tally-emoji-animation="wave">buildspace</span> / august</h3>
                     <div class="event-image-container">
                         <img src="media/buildspace.PNG" alt="Buildspace">
                     </div>
