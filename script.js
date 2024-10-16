@@ -7,10 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function openModal(modal) {
         modal.style.display = 'block';
+        document.body.classList.add('modal-open');
     }
 
     function closeModal(modal) {
         modal.style.display = 'none';
+        document.body.classList.remove('modal-open');
     }
 
     illuminateBtn.onclick = function(event) {
@@ -29,9 +31,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Close the modal when clicking outside the modal content
     window.onclick = function(event) {
         if (event.target.classList.contains('modal')) {
             closeModal(event.target);
         }
+    }
+
+    // Add touch event for mobile devices
+    window.ontouchend = function(event) {
+        if (event.target.classList.contains('modal')) {
+            closeModal(event.target);
+        }
+    }
+
+    // Check for backdrop-filter support
+    if (!('backdropFilter' in document.body.style) && 
+        !('-webkit-backdrop-filter' in document.body.style)) {
+        document.body.classList.add('no-backdrop-filter');
     }
 });
