@@ -6,25 +6,33 @@ document.addEventListener('DOMContentLoaded', function() {
     var spans = document.getElementsByClassName('close');
 
     function openModal(modal) {
-        // Add backdrop and modal-open class before showing the modal
         document.body.classList.add('modal-open');
         var backdrop = document.createElement('div');
         backdrop.className = 'modal-backdrop';
         document.body.appendChild(backdrop);
 
-        // Short delay to ensure backdrop is rendered before showing modal
+        // Show the modal
+        modal.style.display = 'block';
+        
+        // Add small delay before adding show class for animation
         setTimeout(() => {
-            modal.style.display = 'block';
+            modal.classList.add('show');
         }, 10);
     }
 
     function closeModal(modal) {
-        modal.style.display = 'none';
-        document.body.classList.remove('modal-open');
-        var backdrop = document.querySelector('.modal-backdrop');
-        if (backdrop) {
-            backdrop.remove();
-        }
+        // Remove the show class first
+        modal.classList.remove('show');
+        
+        // Wait for animation to complete before hiding
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+            var backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+                backdrop.remove();
+            }
+        }, 300); // Match this with your CSS transition duration
     }
 
     illuminateBtn.onclick = function(event) {

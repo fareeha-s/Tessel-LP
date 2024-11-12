@@ -5,6 +5,13 @@ body, html {
     color: #f1e4d8;
 }
 
+:root {
+    --animation-speed-fast: 150ms;
+    --animation-speed-medium: 300ms;
+    --animation-speed-slow: 450ms;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+}
+
 .background {
     position: fixed;
     top: 0;
@@ -212,9 +219,10 @@ footer {
     }
     
     .cta-buttons {
-        flex-direction: column; /* Stack buttons vertically on small screens */
-        align-items: flex-start; /* Align buttons to the left on small screens */
-        gap: 10px; /* Reduced gap for smaller screens */
+        flex-direction: row; /* Changed from column to row */
+        align-items: center; /* Changed from flex-start to center */
+        justify-content: flex-start; /* Keep buttons aligned to the left */
+        gap: 10px;
     }
     
     .cta-button {
@@ -545,13 +553,15 @@ footer {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(28, 44, 60, 0.1); /* Regular semi-transparent background */
+    background-color: rgba(28, 44, 60, 0.05); /* Reduced from 0.1 */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     overflow-y: auto; /* Allow vertical scrolling if needed */
     padding: 20px; /* Add padding to the modal container */
     box-sizing: border-box; /* Include padding in width calculation */
     transition: background-color 0.3s ease;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .modal:active {
@@ -559,7 +569,7 @@ footer {
 }
 
 .modal-content {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.15); /* Reduced from 0.5 */
     backdrop-filter: blur(10px);
     margin: 15vh auto;
     padding: 40px 40px 40px; /* Top and sides 40px, bottom 20px */
@@ -570,6 +580,7 @@ footer {
     border-radius: 0 20px 0 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     position: relative; /* For absolute positioning of close button */
+    z-index: 1001;
 }
 
 .modal-content .align-right {
@@ -605,383 +616,20 @@ footer {
 }
 
 .close {
-    color: #f1e4d8;
     position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+    top: 20px;
+    right: 25px;
+    z-index: 1010;
 }
 
-.close:hover,
-.close:focus {
-    color: #C9B8A2;
-    text-decoration: none;
-}
-
-.modal-content .white-semibold.italic {
-    font-style: italic;
-}
-
-.modal-content .indent-1 {
-    padding-left: 20px;
-    display: inline-block;
-}
-
-.modal-content .indent-2 {
-    padding-left: 40px;
-    display: inline-block;
-}
-
-.modal-content .indent-3 {
-    padding-left: 60px;
-    display: inline-block;
-}
-
-.modal-content .indent-4 {
-    padding-left: 80px;
-    display: inline-block;
-}
-
-.modal-content .indent-5 {
-    padding-left: 100px;
-    display: inline-block;
-}
-
-.modal-content p.no-margin {
-    margin-bottom: 15px; /* Adjust this value as needed for spacing between this block and the next paragraph */
-    line-height: 1.4; /* Controls spacing between the lines within this block */
-}
-
-#productModal .modal-content p .indent-1 {
-    padding-left: 20px;
-    display: inline-block;
-}
-
-#productModal .modal-content p .indent-2 {
-    padding-left: 40px;
-    display: inline-block;
-}
-
-#productModal .modal-content p .indent-3 {
-    padding-left: 60px;
-    display: inline-block;
-}
-
-.modal-content p:last-child {
-    margin-bottom: 0; /* Removes the bottom margin of the last paragraph */
-}
-
-/* Add a media query for smaller screens */
-@media (max-width: 768px) {
-    .modal-content {
-        margin: 10vh auto; /* Less top margin on small screens */
-        padding: 20px; /* Slightly less padding on small screens */
-    }
-    
-    .close {
-        top: 5px;
-        right: 10px;
-    }
-}
-
-.modal-content .tessel-highlight {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2em; /* Adjust this value to make it bigger as needed */
-    font-weight: normal; /* Remove bold */
-}
-
-/* Remove this if it exists */
-.modal-content .align-right {
-    text-align: left; /* or remove this rule entirely */
-}
-
-.modal-content .indent-1 { padding-left: 20px; }
-.modal-content .indent-2 { padding-left: 40px; }
-.modal-content .indent-3 { padding-left: 60px; }
-.modal-content .indent-4 { padding-left: 80px; }
-
-.modal-content .white-semibold {
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.modal-content .white-semibold.italic {
-    font-style: italic;
-}
-
-.modal-content .tessel-highlight {
-    font-family: 'Playfair Display', serif;
-    font-size: inherit; /* This will make it the same size as the surrounding text */
-    font-weight: normal;
-}
-
-/* Remove this if it exists */
-.modal-content .align-right {
-    text-align: left; /* or remove this rule entirely */
-}
-
-.optic-white {
-    color: #FFFFFF;
-    font-weight: normal;
-}
-
-.modal-content p {
-    margin-bottom: 15px; /* Adjust this value as needed */
-}
-
-.modal-content p:last-child {
-    margin-bottom: 0; /* Removes margin from the last paragraph */
-}
-
-.modal-content .white-semibold {
-    font-weight: 600;
-    /* Remove any color property if it exists */
-}
-
-.semibold {
-    font-weight: 600;
-}
-
-.white {
-    color: #FFFFFF;
-}
-
-.events-page .logo a,
-.events-page .logo a:hover {
-    color: #ffffff;
-}
-
-.events-page {
-    background-color: #1c2c3c;
-}
-
-.events-page .background {
-    background-image: url('media/background-b2b.jpg');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.6;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.events-page #bgImage {
-    display: none;
-}
-
-.events-content {
-    padding-top: 120px;
-}
-
-.events-content h1 {
+.close i {
+    color: #f1e4d8;
     font-size: 24px;
-    color: #f1e4d8;
-    margin-bottom: 20px;
-    font-weight: normal;
-    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
 }
 
-.events-content .description {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #f1e4d8;
-    max-width: 800px;
-    margin-bottom: 40px;
-}
-
-.events-content h3 {
-    font-size: 18px;
+.close:hover i {
     color: #C9B8A2;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    font-weight: normal;
-}
-
-.events-content .description .right-aligned {
-    text-align: right;
-    margin-top: 20px;
-}
-
-.events-content .description .indented-line {
-    padding-left: 20px;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.events-content .description .indented-line:last-child {
-    margin-bottom: 0;
-}
-
-@media (min-width: 1024px) {
-    .events-content h1 {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-}
-
-.events-description {
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 20px 0;
-}
-
-.events-description .gradient-text {
-    background: linear-gradient(45deg, #f1e4d8, #C9B8A2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 500;
-}
-
-.events-description .highlight {
-    background-color: rgba(241, 228, 216, 0.2);
-    padding: 2px 4px;
-    border-radius: 3px;
-}
-
-.b2b-content h1 {
-    font-size: 24px;
-    color: #f1e4d8;
-    margin-bottom: 10px; /* Reduced gap */
-    font-weight: normal;
-    letter-spacing: 0.05em;
-}
-
-.b2b-description {
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 800px;
-    margin-top: 0; /* Removes default top margin */
-}
-
-.b2b-link {
-    text-decoration: none; /* Remove underline */
-    cursor: pointer;
-    color: #ffffff;
-    transition: all 0.3s ease;
-    position: relative;
-    padding-right: 1.5em; /* Make space for the arrow */
-}
-
-.b2b-link:hover {
-    opacity: 0.8;
-}
-
-.next-project {
-    font-style: normal;
-}
-
-.event-card-content p {
-    font-weight: normal;
-}
-
-.cta-button.collaborate-button {
-    display: inline-block;
-    text-decoration: none;
-    border: 1px solid #ffffff;
-    padding: 8px 16px;
-    border-radius: 0 20px 0 20px;
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-    color: #ffffff;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.cta-button.collaborate-button:hover {
-    background-color: #ffffff; /* Solid white background on hover */
-    color: #1c2c3c; /* Dark text color on hover */
-}
-
-.secondary-button {
-    /* Keep any existing styles */
-}
-
-.secondary-button:hover {
-    /* Remove any hover styles here if they exist */
-}
-
-.modal-content p.modal-last-content {
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.modal-content h2 .b2b-link {
-    color: inherit;
-    transition: all 0.3s ease;
-}
-
-.modal-content h2 .b2b-link:hover {
-    opacity: 0.8;
-}
-
-.no-backdrop-filter .modal {
-    background-color: rgba(28, 44, 60, 0.95); /* More opaque fallback */
-}
-
-.b2b-link,
-.tally-link {
-    cursor: pointer;
-    color: #ffffff;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-    padding-left: 0;
-    position: relative;
-}
-
-.tally-link {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Add an underline */
-    padding-bottom: 2px; /* Space for the underline */
-}
-
-.b2b-link:hover,
-.tally-link:hover {
-    padding-left: 10px; /* Adjust this value for desired indent */
-    opacity: 0.8; /* Slightly reduced opacity on hover */
-}
-
-.tally-link:hover {
-    border-bottom-color: #ffffff; /* Make the underline more visible on hover */
-}
-
-.tally-link::after {
-    content: '→'; /* Add an arrow */
-    position: absolute;
-    right: -20px; /* Position the arrow outside the link text */
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.tally-link:hover::after {
-    opacity: 1;
-    transform: translateY(-50%) translateX(5px); /* Move the arrow slightly on hover */
-}
-
-.event-link {
-    color: #ffffff;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border-bottom: 1px solid #ffffff;
-    padding-bottom: 2px;
-    cursor: pointer; /* This ensures the cursor is always a pointer for these links */
-}
-
-.event-link:hover {
-    opacity: 0.6;
-    border-bottom-color: transparent;
-    cursor: pointer; /* This is redundant with the above, but included for clarity */
-}
-
-.close:hover,
-.close:focus {
-    color: #C9B8A2;
-    text-decoration: none;
 }
 
 .modal-content .white-semibold.italic {
@@ -1188,7 +836,7 @@ body:not(.modal-open) .modal-backdrop {
 
 /* Ensure your modal has a higher z-index */
 .modal {
-    z-index: 50;
+    z-index: 1000;
     /* ... other existing styles ... */
 }
 
@@ -1208,4 +856,96 @@ body:not(.modal-open) .modal-backdrop {
 .unbold:hover {
     background-color: #ffffff;
     color: #1c2c3c;
+}
+
+/* Ensure consistent z-index stacking for all modals */
+.modal {
+    z-index: 1000;
+}
+
+.modal-content {
+    z-index: 1001;
+    position: relative; /* Ensure this is set */
+}
+
+/* Specific styling for the close button */
+.close {
+    color: #f1e4d8;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1010; /* Increased to be above everything */
+    padding: 10px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+/* Specific override for ignite modal if needed */
+#igniteModal .close {
+    z-index: 1010; /* Ensure it's the same high z-index */
+    position: absolute; /* Reinforce absolute positioning */
+}
+
+/* Add hover states */
+.close:hover,
+.close:focus {
+    color: #C9B8A2;
+    text-decoration: none;
+    background-color: rgba(28, 44, 60, 0.5);
+}
+
+/* Only these essential properties */
+span.close {
+    color: #f1e4d8;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1010;
+}
+
+span.close:hover {
+    color: #C9B8A2;
+}
+
+/* Add styles for mobile animation */
+@media (max-width: 768px) {
+    .modal {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .modal-content {
+        margin: 0;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        /* Keeping your original border radius */
+        border-radius: 0 20px 0 20px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease-out;
+    }
+
+    /* Class to trigger the slide-up animation */
+    .modal.show .modal-content {
+        transform: translateY(0);
+    }
+}
+
+.modal-content h2 .b2b-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.modal-content h2 .b2b-link:hover {
+    color: #C9B8A2; /* Optional: adds a subtle hover effect */
 }
