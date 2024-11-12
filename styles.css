@@ -654,6 +654,7 @@ footer {
     top: 20px;
     right: 25px;
     z-index: 1010;
+    cursor: pointer;
 }
 
 .close i {
@@ -1008,13 +1009,6 @@ body:not(.modal-open) .modal-backdrop {
     position: absolute; /* Reinforce absolute positioning */
 }
 
-/* Add hover states */
-.close:hover,
-.close:focus {
-    color: #C9B8A2;
-    text-decoration: none;
-    background-color: rgba(28, 44, 60, 0.5);
-}
 
 /* Only these essential properties */
 span.close {
@@ -1118,4 +1112,20 @@ span.close:hover {
         min-height: min-content;
         display: inline-block;
     }
+}
+
+/* Add these new styles */
+.modal-content p {
+    margin-bottom: 15px; /* Consistent margin between paragraphs */
+}
+
+.modal-content p:last-child,
+.modal-content p.modal-last-content,
+.modal-content h2:last-child {
+    margin-bottom: 0; /* Remove bottom margin from last element */
+}
+
+/* Remove any existing margin-bottom from specific elements */
+.modal-content .no-margin {
+    margin-bottom: 15px; /* Make consistent with other paragraphs */
 }
