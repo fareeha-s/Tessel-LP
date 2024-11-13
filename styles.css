@@ -550,62 +550,21 @@ footer {
     overflow-y: auto;
     padding: 20px;
     box-sizing: border-box;
-    transition: background-color 0.3s ease;
-    transform: translateY(0);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.modal:active {
-    background-color: rgba(0,0,0,0.8); /* Darken the background slightly when tapped */
 }
 
 .modal-content {
-    background-color: rgba(255, 255, 255, 0.15); /* Reduced from 0.5 */
+    background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     margin: 15vh auto;
-    padding: 40px 40px 40px; /* Top and sides 40px, bottom 20px */
+    padding: 40px;
     border: 1px solid rgba(255,255,255,0.2);
     width: 90%;
     max-width: 800px;
     color: #f1e4d8;
     border-radius: 0 20px 0 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    position: relative; /* For absolute positioning of close button */
+    position: relative;
     z-index: 1001;
-    max-height: none;
-    overflow-y: visible;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    width: 90%;
-    max-width: 800px;
-    border-radius: 0 20px 0 20px;
-    height: auto; /* Let it size to content */
-    max-height: none; /* Remove max-height constraint */
-    overflow: visible; /* Remove scrolling */
-    padding: 40px; /* Consistent padding all around */
-    display: inline-block; /* Makes container fit content */
-    height: fit-content; /* Dynamically fit content height */
-    min-width: min-content; /* Ensures minimum width fits content */
-}
-
-@media (max-width: 768px) {
-    .modal-content {
-        top: 50%; /* Position at middle of screen */
-        transform: translateY(-50%); /* Center it vertically */
-        left: 10px;
-        right: 10px;
-        width: auto;
-        height: auto; /* Let it size to content */
-        max-height: none; /* Remove max-height constraint */
-        border-radius: 20px;
-        padding: 30px; /* Slightly smaller but still consistent padding for mobile */
-        margin: 20px 0;
-        overflow: visible; /* Remove scrolling */
-        height: fit-content;
-        min-height: min-content;
-        display: inline-block;
-    }
 }
 
 .modal-content .align-right {
@@ -1006,11 +965,17 @@ span.close:hover {
 .modal-content h2 .b2b-link {
     color: #ffffff;
     text-decoration: none;
-    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Add subtle underline */
+    display: inline-block; /* Ensures the underline spans the exact text width */
 }
 
 .modal-content h2 .b2b-link:hover {
-    color: #C9B8A2; /* Optional: adds a subtle hover effect */
+    color: #C9B8A2; /* Color change on hover */
+    border-bottom-color: #C9B8A2; /* Underline color changes on hover */
+    padding-left: 10px; /* Slight indent on hover */
 }
 
 .modal-content {
@@ -1131,4 +1096,21 @@ span.close:hover {
     .modal {
         background-color: rgba(0, 0, 0, 0.1); /* Light transparent overlay */
     }
+}
+
+/* Add or modify these styles */
+.modal-cta {
+    margin-top: 40px; /* Adds space above the CTA section */
+    padding-top: 20px; /* Optional: adds additional padding */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Optional: adds a subtle divider */
+}
+
+/* If you want to adjust the specific spacing for the links */
+.modal-cta h2 {
+    margin-top: 0; /* Reset any default margins */
+    margin-bottom: 15px; /* Space between the two links */
+}
+
+.modal-cta h2:last-child {
+    margin-bottom: 0; /* Remove margin from last link */
 }
