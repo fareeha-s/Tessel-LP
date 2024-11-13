@@ -1415,3 +1415,27 @@ span.close:hover {
         display: block; /* Show only on mobile */
     }
 }
+
+/* Hide modals and their trigger buttons on mobile */
+@media (max-width: 768px) {
+    .modal,
+    #productModal,
+    #igniteModal {
+        display: none !important; /* Use !important to override any other display settings */
+    }
+
+    /* Hide the buttons that trigger the modals */
+    #applyButton,
+    #igniteButton {
+        display: none;
+    }
+
+    /* Optional: Add a message explaining why buttons aren't available */
+    .mobile-text {
+        display: block;
+        font-size: 14px;
+        color: rgba(241, 228, 216, 0.6);
+        margin-top: 20px;
+        font-style: italic;
+    }
+}
