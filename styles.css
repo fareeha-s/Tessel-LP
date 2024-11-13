@@ -553,9 +553,9 @@ footer {
 }
 
 .modal-content {
+    position: relative;
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
-    margin: 15vh auto;
     padding: 40px;
     border: 1px solid rgba(255,255,255,0.2);
     width: 90%;
@@ -563,8 +563,9 @@ footer {
     color: #f1e4d8;
     border-radius: 0 20px 0 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    position: relative;
-    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Consistent spacing between elements */
 }
 
 .modal-content .align-right {
@@ -813,8 +814,9 @@ body.modal-open {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(28, 44, 60, 0.2);
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     z-index: 40;
     opacity: 1;
     transition: opacity 0.3s ease;
@@ -1094,7 +1096,11 @@ span.close:hover {
 /* Only target iOS devices */
 @supports (-webkit-touch-callout: none) {
     .modal {
-        background-color: rgba(0, 0, 0, 0.1); /* Light transparent overlay */
+        background-color: rgba(28, 44, 60, 0.05);
+    }
+    
+    .modal-backdrop {
+        background-color: rgba(28, 44, 60, 0.2);
     }
 }
 
@@ -1113,4 +1119,157 @@ span.close:hover {
 
 .modal-cta h2:last-child {
     margin-bottom: 0; /* Remove margin from last link */
+}
+
+/* Specific styles for ignite modal */
+#igniteModal .modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Use gap for consistent spacing */
+}
+
+.ignite-slides-container {
+    flex: 0 1 auto; /* Don't force growth */
+}
+
+.modal-cta {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+    margin-top: auto; /* Push to bottom if space available */
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 20px;
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+        margin: 20px;
+        gap: 15px;
+    }
+
+    #igniteModal .modal-content {
+        height: auto;
+        min-height: auto;
+        gap: 15px;
+    }
+
+    .ignite-slides-container {
+        margin-bottom: 0;
+    }
+
+    .modal-cta {
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+
+    /* Remove any fixed heights */
+    .modal-slide, 
+    .slide-content {
+        height: auto;
+    }
+}
+
+/* Styles for both modals */
+#productModal .modal-content,
+#igniteModal .modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Mobile specific adjustments for both modals */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 20px;
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+        margin: 20px;
+        gap: 15px;
+    }
+
+    #productModal .modal-content,
+    #igniteModal .modal-content {
+        height: auto;
+        min-height: auto;
+        gap: 15px;
+    }
+
+    /* Adjust spacing for modal slides */
+    .modal-slide {
+        margin-bottom: 0;
+    }
+
+    /* Adjust paragraph spacing */
+    .modal-content p {
+        margin-bottom: 15px;
+    }
+
+    .modal-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Remove any fixed heights */
+    .modal-slide, 
+    .slide-content {
+        height: auto;
+    }
+
+    /* Adjust indentation spacing for mobile */
+    .modal-content .indent-1 { padding-left: 15px; }
+    .modal-content .indent-2 { padding-left: 30px; }
+    .modal-content .indent-3 { padding-left: 45px; }
+    .modal-content .indent-4 { padding-left: 60px; }
+}
+
+/* Mobile adjustments for close button */
+@media (max-width: 768px) {
+    .modal .close {
+        display: none; /* Hide the close button on mobile */
+    }
+    
+    /* Optional: Add more padding at the top since we removed the close button */
+    .modal-content {
+        padding-top: 15px;
+    }
+}
+
+/* Scroll indicator - Mobile Only */
+.scroll-indicator {
+    display: none; /* Hidden by default */
+}
+
+/* Only show on mobile */
+@media (max-width: 768px) {
+    .scroll-indicator {
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(241, 228, 216, 0.8);
+        font-size: 24px;
+        animation: bounce 2s infinite;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateX(-50%) translateY(0);
+        }
+        40% {
+            transform: translateX(-50%) translateY(-10px);
+        }
+        60% {
+            transform: translateX(-50%) translateY(-5px);
+        }
+    }
+
+    .scroll-indicator.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
 }
