@@ -1066,3 +1066,69 @@ span.close:hover {
         display: inline-block;
     }
 }
+
+/* Add these new styles */
+.modal-content p {
+    margin-bottom: 15px; /* Consistent margin between paragraphs */
+}
+
+.modal-content p:last-child,
+.modal-content p.modal-last-content,
+.modal-content h2:last-child {
+    margin-bottom: 0; /* Remove bottom margin from last element */
+}
+
+/* Remove any existing margin-bottom from specific elements */
+.modal-content .no-margin {
+    margin-bottom: 15px; /* Make consistent with other paragraphs */
+}
+
+/* Add these new styles */
+.event-card .event-link {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1px; /* Start with full width */
+    transition: all 0.3s ease;
+    padding-bottom: 2px;
+    opacity: 0.5; /* Make the default underline subtle */
+}
+
+.event-card .event-link:hover {
+    opacity: 1; /* Full opacity on hover */
+    color: #C9B8A2; /* Color change on hover */
+}
+
+/* Add a subtle pointer cursor */
+.event-card h3.next-project .event-link {
+    cursor: pointer;
+    position: relative;
+    display: inline-block; /* Ensures the underline spans the exact text width */
+}
+
+/* Explicitly remove any after pseudo-element */
+.event-card h3.next-project .event-link::after {
+    content: none;
+}
+
+/* Update existing styles */
+.event-card h3.next-project,
+.event-card h3.next-project .event-link {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer; /* Add cursor pointer to indicate clickable */
+}
+
+/* Optional: Add a subtle color change on hover */
+.event-card h3.next-project .event-link:hover {
+    color: #C9B8A2;
+}
+
+/* Only target iOS devices */
+@supports (-webkit-touch-callout: none) {
+    .modal {
+        background-color: rgba(0, 0, 0, 0.1); /* Light transparent overlay */
+    }
+}
