@@ -563,9 +563,47 @@ footer {
     color: #f1e4d8;
     border-radius: 0 20px 0 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Consistent spacing between elements */
+    margin: 10vh auto; /* Center vertically with margin */
+}
+
+/* Desktop window resize handling */
+@media (min-width: 769px) {
+    .modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-content {
+        margin: 0 auto; /* Reset margin when using flex centering */
+    }
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: -webkit-fill-available; /* iOS viewport fix */
+    }
+
+    .modal-content {
+        margin: 0 auto;
+        width: calc(100% - 40px);
+        background-color: rgba(28, 44, 60, 0.85);
+        position: relative;
+        border-radius: 20px;
+        max-height: 85vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    @media (max-width: 768px) {
+        .modal-content {
+            padding: 25px;
+        }
+    }
 }
 
 .modal-content .align-right {
@@ -1093,19 +1131,75 @@ span.close:hover {
     color: #C9B8A2;
 }
 
-/* Only target iOS devices */
+/* iOS specific fixes - consolidate all iOS-related code */
 @supports (-webkit-touch-callout: none) {
+    /* Reset any problematic styles */
     .modal {
-        background-color: rgba(28, 44, 60, 0.85); /* Increased opacity significantly */
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
     }
     
     .modal-backdrop {
-        background-color: rgba(28, 44, 60, 0.95); /* Increased opacity significantly */
+        background-color: rgba(28, 44, 60, 0.2);
+        backdrop-filter: blur(3px);
     }
 
     .modal-content {
-        background-color: rgba(28, 44, 60, 0.95); /* Added modal content background */
-        backdrop-filter: none; /* Remove blur effect on iOS */
+        position: relative; /* Change from fixed to relative */
+        width: 90%;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: rgba(28, 44, 60, 0.95);
+        transform: none; /* Remove transform */
+        top: auto; /* Remove top positioning */
+        left: auto; /* Remove left positioning */
+        right: auto; /* Remove right positioning */
+        bottom: auto; /* Remove bottom positioning */
+        height: auto;
+        max-height: 85vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        border-radius: 20px;
+    }
+
+    /* Mobile-specific adjustments for iOS */
+    @media (max-width: 768px) {
+        .modal-content {
+            width: calc(100% - 40px);
+            padding: 25px;
+            margin: 20px auto;
+            border-radius: 20px;
+            position: relative;
+            transform: none;
+            top: auto;
+            left: auto;
+        }
+
+        .modal {
+            padding: 0;
+            align-items: center;
+        }
+    }
+}
+
+/* Remove any conflicting transform properties from existing mobile styles */
+@media (max-width: 768px) {
+    .modal-content {
+        position: relative;
+        transform: none;
+        margin: 20px auto;
+        width: calc(100% - 40px);
+        border-radius: 20px;
     }
 }
 
@@ -1267,5 +1361,57 @@ span.close:hover {
     .modal-content {
         padding: 25px; /* Slightly reduced for very small screens */
         margin: 15px;
+    }
+}
+
+/* Mobile-specific styles for CTA buttons */
+@media (max-width: 768px) {
+    .cta-buttons {
+        display: none; /* Hide the buttons */
+    }
+
+    main::after {
+        content: '';
+        display: inline-block;
+        color: rgba(241, 228, 216, 0.6);
+        font-size: 14px;
+        margin-top: 20px;
+        font-style: italic;
+    }
+
+    main::before {
+        content: '';
+        display: block;
+        margin-top: 20px; /* Creates space above the text */
+    }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .cta-buttons {
+        display: none; /* Hide the buttons */
+    }
+
+    main {
+        margin-bottom: 20px; /* Add some space for the text */
+    }
+}
+
+.mobile-text {
+    display: none; /* Hidden by default */
+    font-size: 14px;
+    font-style: italic;
+    color: rgba(241, 228, 216, 0.6);
+    margin-top: 20px; /* Reduced from 30px to 20px */
+}
+
+.mobile-text a {
+    color: rgba(241, 228, 216, 0.8);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .mobile-text {
+        display: block; /* Show only on mobile */
     }
 }
